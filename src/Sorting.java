@@ -1,17 +1,54 @@
-/**
- * Created by Varun on 2/7/2017.
- */
+
 public class Sorting {
     public static void main(String []args){
 
         int []a={3,4,1,0,-1,2};
         //new Sorting().quickSort(a,0,a.length-1);
-        new Sorting().mergeSort(a,0,a.length-1);
+        //new Sorting().mergeSort(a,0,a.length-1);
+        //new Sorting().selectionSort(a);
+        new Sorting().insertionSort(a);
+
         for(int i=0;i<a.length;i++)
         System.out.print(a[i] + " ");
 
 
 
+    }
+
+    private void insertionSort(int[] arr) {
+        int len=arr.length;
+        int i, key, j;
+        for (i = 1; i < len; i++)
+        {
+            key = arr[i];
+            j = i-1;
+
+       /* Move elements of arr[0..i-1], that are
+          greater than key, to one position ahead
+          of their current position */
+            while (j >= 0 && arr[j] > key)
+            {
+                arr[j+1] = arr[j];
+                j = j-1;
+            }
+            arr[j+1] = key;
+        }
+    }
+
+    public void selectionSort(int a[]){
+        int len=a.length;
+        for(int i=0;i<len;i++){
+            int min_idx=i;
+
+            for(int j=i+1;j<len;j++)
+                if(a[j]<a[min_idx])
+                    min_idx=j;
+
+            int tmp=a[min_idx];
+            a[min_idx]=a[i];
+            a[i]=tmp;
+
+        }
     }
     public void mergeSort(int a[],int low,int high){
         if(low<high){

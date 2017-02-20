@@ -1,9 +1,7 @@
-/**
- * Created by Varun on 2/7/2017.
- */
+
 public class StringEncoding {
     public static void main(String []args){
-        System.out.println(new StringEncoding().encode("aaaabbcc"));
+        System.out.println(new StringEncoding().encode("aabb"));
     }
 
     public String encode(String a){

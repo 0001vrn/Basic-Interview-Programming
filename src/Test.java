@@ -1,10 +1,10 @@
 
 public class Test {
     public static void main(String []args){
-        String a = "Hello";
+        String a = "aabb";
         System.out.println(a);
-        a+=" World";
-        System.out.println(a);
+
+        System.out.println(a.substring(0,2));
 
     }
 }
